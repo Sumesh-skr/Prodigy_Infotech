@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container {
+    background-color: #f5d7db;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+}
+
+.wrapper {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper p {
+    position: relative;
+    display: inline-block;
+    color: #f7f7f7;
+    z-index: 9999;
+    font-size: 48px;
+    margin-bottom: 100px; /* Reduced margin for lap times */
+}
+
+.wrapper p::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #f1916d;
+    z-index: -1;
+    border-radius: 50%;
+    left: -10%;
+    top: -118%;
+    animation-name: shine;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shine {
+    0%, 100% {
+        box-shadow: 0px 0px 32px -12px rgb(255, 213, 105);
+    }
+
+    50% {
+        box-shadow: 0px 0px 32px 3px rgba(255, 213, 105, 0.5);
+    }
+}
+
+button {
+    background-color: #f1916d;
+    padding: 10px 38px;
+    border: 1px solid #473E66;
+    border-radius: 28px;
+    color: #f7f7f7;
+    transition: all .6s ease;
+    outline: 0;
+}
+
+button:not(:last-child) {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+button:hover,
+button:focus {
+    border-color: #1b3358;
+    color: #1b3358;
+    box-shadow: 0px 4px 27px -12px #1b3358;
+}
+
+.lap-times-container {
+    text-align: center;
+    margin-top: 30px;
+    color: #a23f17; /* Set color for lap times */
+    font-size: 20px; /* Adjust font size for lap times */
+    font-weight: 600;
+}
